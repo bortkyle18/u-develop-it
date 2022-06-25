@@ -65,7 +65,7 @@ router.post('/voters', ({ body }, res) => {
 
 
 // Update a voter's email
-router.put('/voter/:id', (req, res) => {
+router.put('/voters/:id', (req, res) => {
     // Data validation
     const errors = inputCheck(req.body, 'email');
     if (errors) {
@@ -95,7 +95,7 @@ router.put('/voter/:id', (req, res) => {
 
 
 // Delete a voter
-router.delete('/voter/:id', (req, res) => {
+router.delete('/voters/:id', (req, res) => {
     const sql = `DELETE FROM voters WHERE id = ?`;
 
     db.query(sql, req.params.id, (err, result) => {
